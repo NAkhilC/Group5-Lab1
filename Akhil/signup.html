@@ -2,6 +2,47 @@
 <html>
 <head>
 	<title>First code</title>
+	<script type = "text/javascript">
+		function validate() {
+			
+			var name=document.signupf.name.value;
+			var email=document.signupf.email.value;
+			var userid=document.signupf.userid.value;
+			var pass=document.signupf.Password.value;
+			var cpass=document.signupf.CPassword.value;
+			//validation for name            
+            if(name=="")
+            {
+            	alert('Enter name');
+            	return false;
+            }
+            //validation for email
+            if(email=="")
+            {
+            	alert('Enter email');
+            	return false;
+            }
+            //validation for userid
+            if(userid=="")
+            {
+            	alert('Enter Userid');
+            	return false;
+            }
+            //validation for Password
+            if(pass=="")
+            {
+            	alert('Enter Password');
+            	return false;
+            }
+            //validation for confirm password
+            if(cpass != pass)
+            {
+            	alert('Password and confirm password should match');
+            	return false;
+            }
+
+		}
+	</script>
 	<style type="text/css">
 		.textin
 		{
@@ -14,18 +55,82 @@
 	</style>
 </head>
 <body style="background-color: #6cb2e0">
+	<center><html>
+<head>
+	<title>First code</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script type = "text/javascript">
+		function hv(info) {
+			 
+			 if( document.getElementById(info).style.visibility==='hidden')
+			 {
+			 	document.getElementById(info).style.visibility='visible';
+			 }
+			 else
+			 {
+			 	document.getElementById(info).style.visibility='hidden';
+			 }
+		}
+	</script>
+	<style type="text/css">
+		.textin
+		{
+          padding: 2px;width: 60%;height: 40px;margin-top: 10px;min-width: 200px;
+		}
+		.textinp
+		{
+          padding: 2px;width: 54%;height: 40px;
+		}
+		.btn
+		{
+			margin-bottom: 20px;width: 20%;height: 35px;background-color: #6cb2e0;margin-top: 20px;
+		}
+		.div1
+		{
+           
+			background-color:white ;padding: 1px;width: 40%;margin-top: 100px;border-radius: 10px ;
+			opacity: 0.9;min-width: 350px;
+		}
+	</style>
+</head>
+<body style="background-color: #6cb2e0;background-repeat: no-repeat;background-size: cover;" background="back.jpeg">
 	<center>
-	    <div style="background-color:white ;padding: 1px;width: 40%;margin-top: 100px;border-radius: 10px ;">
+	    <div class="div1" >
 	    	<div>
 	    		<img src="https://images.theconversation.com/files/243439/original/file-20181101-83635-1xcrr39.jpg?ixlib=rb-1.1.0&q=45&auto=format&w=926&fit=clip" style="border-radius: 100px 100px 100px 100px;width: 15%;height: 80px;margin-top: 40px;"></img>
 	    	</div>
 	    	<h3>TRY IT FOR FREE!!</h3>
 	    	<form>
+	    	<form name = "signupf" onsubmit = "validate()">
 	    		 <input type="text" name="name" placeholder="Name" class="textin" />
-			     <input type="email" name="email" placeholder="Email" class="textin" />
+	    		 <input type="email" name="email" placeholder="Email" class="textin" />
+		         <input type="text" name="userid" placeholder="Userid" class="textin"/>
+		         <div style="margin-top: 10px;">
+		         	 <div style="position: absolute;width: 21%;background-color: #302f2f;margin-top: -90px;margin-left: 11%;visibility: hidden;color: white"  id="info"> <ul>
+		         	 	<li>Password must be more than 8 charecters, alphanumeric and one special charecter </li>
+		         	 </ul></div>
+		         	 <input type="Password" name="Password" placeholder="Password" class="textinp"  />
+		         	 <img src="info.png" style="width: 5%;height: 25px;" onclick="hv('info')">
+		         </div>
+		         <input type="Password" name="CPassword" placeholder="Confirm Password" class="textin"  /><br>
+		         <input type="submit" name="Submit" class="btn">
+		         <input type="reset" name="Reset"  class="btn" style="margin-left: 30px;">
+	    	</form>
+    	</div>
+    </center>
+  </body>
+</html>
+	    <div style="background-color:white ;padding: 1px;width: 40%;margin-top: 100px;border-radius: 10px ;">
+	    	<div>
+	    		<img src="https://images.theconversation.com/files/243439/original/file-20181101-83635-1xcrr39.jpg?ixlib=rb-1.1.0&q=45&auto=format&w=926&fit=clip" style="border-radius: 100px 100px 100px 100px;width: 15%;height: 80px;margin-top: 40px;"></img>
+	    	</div>
+	    	<h3>TRY IT FOR FREE!!</h3>
+	    	<form name = "signupf" onsubmit = "validate()">
+	    		 <input type="text" name="name" placeholder="Name" class="textin" />
+	    		 <input type="email" name="email" placeholder="Email" class="textin" />
 		         <input type="text" name="userid" placeholder="Userid" class="textin"/>
 		         <input type="Password" name="Password" placeholder="Password" class="textin"  />
-			     <input type="Password" name="CPassword" placeholder="Confirm Password" class="textin"  /><br>
+		         <input type="Password" name="CPassword" placeholder="Confirm Password" class="textin"  /><br>
 		         <input type="submit" name="Submit" class="btn">
 		         <input type="reset" name="Reset"  class="btn" style="margin-left: 30px;">
 	    	</form>
