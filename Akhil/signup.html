@@ -1,61 +1,4 @@
-<!DOCTYPE html>
 <html>
-<head>
-	<title>First code</title>
-	<script type = "text/javascript">
-		function validate() {
-			
-			var name=document.signupf.name.value;
-			var email=document.signupf.email.value;
-			var userid=document.signupf.userid.value;
-			var pass=document.signupf.Password.value;
-			var cpass=document.signupf.CPassword.value;
-			//validation for name            
-            if(name=="")
-            {
-            	alert('Enter name');
-            	return false;
-            }
-            //validation for email
-            if(email=="")
-            {
-            	alert('Enter email');
-            	return false;
-            }
-            //validation for userid
-            if(userid=="")
-            {
-            	alert('Enter Userid');
-            	return false;
-            }
-            //validation for Password
-            if(pass=="")
-            {
-            	alert('Enter Password');
-            	return false;
-            }
-            //validation for confirm password
-            if(cpass != pass)
-            {
-            	alert('Password and confirm password should match');
-            	return false;
-            }
-
-		}
-	</script>
-	<style type="text/css">
-		.textin
-		{
-          padding: 1px;width: 60%;height: 30px;margin-top: 10px;
-		}
-		.btn
-		{
-			margin-bottom: 20px;width: 20%;height: 35px;background-color: #6cb2e0;margin-top: 20px;
-		}
-	</style>
-</head>
-<body style="background-color: #6cb2e0">
-	<center><html>
 <head>
 	<title>First code</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -119,22 +62,4 @@
     	</div>
     </center>
   </body>
-</html>
-	    <div style="background-color:white ;padding: 1px;width: 40%;margin-top: 100px;border-radius: 10px ;">
-	    	<div>
-	    		<img src="https://images.theconversation.com/files/243439/original/file-20181101-83635-1xcrr39.jpg?ixlib=rb-1.1.0&q=45&auto=format&w=926&fit=clip" style="border-radius: 100px 100px 100px 100px;width: 15%;height: 80px;margin-top: 40px;"></img>
-	    	</div>
-	    	<h3>TRY IT FOR FREE!!</h3>
-	    	<form name = "signupf" onsubmit = "validate()">
-	    		 <input type="text" name="name" placeholder="Name" class="textin" />
-	    		 <input type="email" name="email" placeholder="Email" class="textin" />
-		         <input type="text" name="userid" placeholder="Userid" class="textin"/>
-		         <input type="Password" name="Password" placeholder="Password" class="textin"  />
-		         <input type="Password" name="CPassword" placeholder="Confirm Password" class="textin"  /><br>
-		         <input type="submit" name="Submit" class="btn">
-		         <input type="reset" name="Reset"  class="btn" style="margin-left: 30px;">
-	    	</form>
-	    </div>
-	</center>
-</body>
 </html>
