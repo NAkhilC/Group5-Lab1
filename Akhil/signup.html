@@ -3,6 +3,69 @@
 	<title>First code</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<script type = "text/javascript">
+		function validate() {
+			var name=document.signupf.name.value;
+			var email=document.signupf.email.value;
+			var userid=document.signupf.userid.value;
+			var pass=document.signupf.Password.value;
+			var cpass=document.signupf.CPassword.value;
+			//validation for name      
+            if(name !="")
+            {
+               	re = /[0-9]/;
+                if(re.test(name)) 
+                  { 
+             	alert("Name should not contain numbers");
+             	return false;
+                   }          	
+            }
+            else
+            {
+            	alert('Enter name');
+            	return false;
+            }
+
+            //validation for email
+            if(email=="")
+            {
+            	alert('Enter email');
+            	return false;
+            }
+            //validation for userid
+            if(userid=="")
+            {
+            	alert('Enter Userid');
+            	return false;
+            }
+            //validation for Password
+             if(pass !="")
+            {
+               	re1 = /(?=.*\d)(?=.*[a-z])(?=.*[A-Z])\w/
+                if(!re1.test(pass)) 
+                  { 
+             	   alert("Password should contain one lower,upper case and number");
+             	   return false;
+                   }   
+                   if(pass.length <8)
+                   {
+                   	aler("passwordmust be minimum 8 charecters");
+                   	return false;
+                   }       	
+            }
+            else
+            {
+            	alert('Enter Password');
+            	return false;
+            }
+            //validation for confirm password
+            if(cpass != pass)
+            {
+            	alert('Password and confirm password should match');
+            	return false;
+            }
+
+		}
+
 		function hv(info) {
 			 
 			 if( document.getElementById(info).style.visibility==='hidden')
@@ -43,8 +106,7 @@
 	    		<img src="https://images.theconversation.com/files/243439/original/file-20181101-83635-1xcrr39.jpg?ixlib=rb-1.1.0&q=45&auto=format&w=926&fit=clip" style="border-radius: 100px 100px 100px 100px;width: 15%;height: 80px;margin-top: 40px;"></img>
 	    	</div>
 	    	<h3>TRY IT FOR FREE!!</h3>
-	    	<form>
-	    	<form name = "signupf" onsubmit = "validate()">
+	    	<form name ="signupf" onsubmit="validate()">
 	    		 <input type="text" name="name" placeholder="Name" class="textin" />
 	    		 <input type="email" name="email" placeholder="Email" class="textin" />
 		         <input type="text" name="userid" placeholder="Userid" class="textin"/>
@@ -56,7 +118,7 @@
 		         	 <img src="info.png" style="width: 5%;height: 25px;" onclick="hv('info')">
 		         </div>
 		         <input type="Password" name="CPassword" placeholder="Confirm Password" class="textin"  /><br>
-		         <input type="submit" name="Submit" class="btn">
+		         <input type="Submit" name="Submit" class="btn">
 		         <input type="reset" name="Reset"  class="btn" style="margin-left: 30px;">
 	    	</form>
     	</div>
